@@ -18,6 +18,7 @@ public class Minesweeper {
         System.out.print("(e)asy, (m)edium, or (h)ard: ");
         String difficulty = scan.nextLine();
         //set board size + num mines depending on difficulty, see minesweeper wikipedia page
+        //could use totalMines for generating mines and for showing mines remaining (totalMines - number of flags on grid), can be negative
         if(difficulty.equals("e")) {
             //9x9, 10 mines
             mineField = new Tile[9][9];
