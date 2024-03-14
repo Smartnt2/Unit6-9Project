@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d1f31cb-e9ce-454c-b853-1e687f16d05f" name="Changes" comment="added Minesweeper, MinesweeperRunner, and start method">
-      <change afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Minesweeper.java" afterDir="false" />
-    </list>
+    <list default="true" id="8d1f31cb-e9ce-454c-b853-1e687f16d05f" name="Changes" comment="added code to tile class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,12 +65,29 @@
       <option name="project" value="LOCAL" />
       <updated>1710422006415</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added Minesweeper, MinesweeperRunner, and start method">
+      <option name="closed" value="true" />
+      <created>1710422558633</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710422558633</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added code to tile class">
+      <option name="closed" value="true" />
+      <created>1710422688067</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710422688067</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="inital commit" />
     <MESSAGE value="added Minesweeper, MinesweeperRunner, and start method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Minesweeper, MinesweeperRunner, and start method" />
+    <MESSAGE value="added code to tile class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added code to tile class" />
   </component>
 </project>
