@@ -43,7 +43,6 @@ public class Minesweeper {
                     mineField[r][c] = new Tile("_");
                 }
             }
-            printMinefield();
 
         }
          else if(difficulty.equals("m")) {
@@ -67,7 +66,6 @@ public class Minesweeper {
                     mineField[r][c] = new Tile("_");
                 }
             }
-            printMinefield();
 
         } else {
             System.out.println("Not an option");
