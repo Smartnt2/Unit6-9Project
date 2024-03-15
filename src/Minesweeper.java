@@ -29,7 +29,6 @@ public class Minesweeper {
                     mineField[r][c] = new Tile("_");
                 }
             }
-            printMinefield();
 
         }
          else if(difficulty.equals("m")) {
@@ -42,7 +41,6 @@ public class Minesweeper {
                 }
             }
 
-
         }
         else if(difficulty.equals("h")) {
             //16x30, 99 mines
@@ -53,7 +51,6 @@ public class Minesweeper {
                     mineField[r][c] = new Tile("_");
                 }
             }
-            printMinefield();
 
         } else {
             System.out.println("Not an option");
