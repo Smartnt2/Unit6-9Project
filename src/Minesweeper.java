@@ -1,16 +1,30 @@
 import java.util.Scanner;
 public class Minesweeper {
+    private int selectedR;
+    private int selectedC;
     private int totalMines;
     private Tile[][] mineField;
     private Scanner scan;
+    private boolean gameOver;
     public Minesweeper() {
+        gameOver = false;
+        selectedR = 0;
+        selectedC = 0;
         scan = new Scanner(System.in);
         setupMinefield();
         start();
     }
 
     public void start() {
-        printMinefield();
+        //need to add flag and click option
+        while(!gameOver) {
+            printMinefield();
+            System.out.print("Enter a direction to move cursor (wasd): ");
+            String direction = scan.nextLine();
+            if(!move(direction)) {
+                System.out.println("You cannot move there!");
+            }
+        }
     }
 
     public void setupMinefield() {
@@ -47,6 +61,40 @@ public class Minesweeper {
                 System.out.print(tile.getSymbol());
             }
             System.out.println();
+        }
+    }
+
+    public boolean move(String direction)  {
+        //adapted from U9T5 gridGame
+        if(direction.equals("w")) {
+            if(selectedR-1 >= 0) {
+                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR-1][selectedC].setSymbol("x");
+                selectedR--;
+                return true;
+            }
+
+        } if(direction.equals("s")) {
+            if(selectedR+1 <= mineField.length) {
+                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR+1][selectedC].setSymbol("x");
+                selectedR++;
+                return true;
+            }
+        } if(direction.equals("a")) {
+            if(selectedC-1 >= 0) {
+                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC-1].setSymbol("x");
+                selectedC--;
+                return true;
+            }
+        } if(direction.equals("d")) {
+            if(selectedC+1 <= mineField[0].length) {
+                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC+1].setSymbol("x");
+                selectedC++;
+                return true;
+            }
         }
     }
 

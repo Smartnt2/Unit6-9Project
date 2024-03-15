@@ -9,4 +9,8 @@ public class Tile {
     public String getSymbol() {
         return symbol;
     }
+
+    public void setSymbol(String newSymbol) {
+        symbol = newSymbol;
+    }
 }
