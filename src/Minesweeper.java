@@ -24,6 +24,7 @@ public class Minesweeper {
             if(!move(direction)) {
                 System.out.println("You cannot move there!");
             }
+
         }
     }
 
@@ -69,7 +70,18 @@ public class Minesweeper {
             System.out.println("Not an option");
             setupMinefield();
         }
+        //place cursor
         mineField[0][0].setSymbol("x");
+        //generate mines;
+        for(int i = 0; i < totalMines; i++) {
+            int randomR = (int) (Math.random() * (mineField.length));
+            int randomC = (int) (Math.random() * (mineField[0].length));
+            while(mineField[randomR][randomC] instanceof Mine) {
+                randomR = (int) (Math.random() * (mineField.length));
+                randomC = (int) (Math.random() * (mineField[0].length));
+            }
+            mineField[randomR][randomC] = new Mine("口");
+        }
     }
 
     public void printMinefield() {

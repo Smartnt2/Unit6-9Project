@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d1f31cb-e9ce-454c-b853-1e687f16d05f" name="Changes" comment="edited setupMinefield">
+    <list default="true" id="8d1f31cb-e9ce-454c-b853-1e687f16d05f" name="Changes" comment="edited move and setupMinefield">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Minesweeper.java" afterDir="false" />
     </list>
@@ -123,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710507196807</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="edited move and setupMinefield">
+      <option name="closed" value="true" />
+      <created>1710508015824</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710508015824</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,6 +151,7 @@
     <MESSAGE value="added code to tile class" />
     <MESSAGE value="started setupMinefield()" />
     <MESSAGE value="edited setupMinefield" />
-    <option name="LAST_COMMIT_MESSAGE" value="edited setupMinefield" />
+    <MESSAGE value="edited move and setupMinefield" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited move and setupMinefield" />
   </component>
 </project>
