@@ -55,7 +55,6 @@ public class Minesweeper {
                 }
             }
 
-
         }
         else if(difficulty.equals("h")) {
             //16x30, 99 mines
