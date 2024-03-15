@@ -1,4 +1,3 @@
-import java.util.Locale;
 import java.util.Scanner;
 public class Minesweeper {
     private int selectedR;
@@ -40,18 +39,18 @@ public class Minesweeper {
             totalMines = 10;
             for(int r = 0; r < mineField.length; r++) {
                 for(int c = 0; c  < mineField[0].length; c++) {
-                    mineField[r][c] = new Tile("_");
+                    mineField[r][c] = new Tile("口");
                 }
             }
 
         }
-         else if(difficulty.equals("m")) {
+        else if(difficulty.equals("m")) {
             //16x16, 40 mines
             mineField = new Tile[16][16];
             totalMines = 40;
             for(int r = 0; r < mineField.length; r++) {
                 for(int c = 0; c  < mineField[0].length; c++) {
-                    mineField[r][c] = new Tile("_");
+                    mineField[r][c] = new Tile("口");
                 }
             }
 
@@ -62,7 +61,7 @@ public class Minesweeper {
             totalMines = 99;
             for(int r = 0; r < mineField.length; r++) {
                 for(int c = 0; c  < mineField[0].length; c++) {
-                    mineField[r][c] = new Tile("_");
+                    mineField[r][c] = new Tile("口");
                 }
             }
 
@@ -70,7 +69,7 @@ public class Minesweeper {
             System.out.println("Not an option");
             setupMinefield();
         }
-
+        mineField[0][0].setSymbol("x");
     }
 
     public void printMinefield() {
@@ -114,6 +113,7 @@ public class Minesweeper {
                 return true;
             }
         }
+        return false;
     }
 
 }
