@@ -97,7 +97,7 @@ public class Minesweeper {
         //adapted from U9T5 gridGame
         if(direction.equals("w")) {
             if(selectedR-1 >= 0) {
-                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC].setSymbol("_");
                 mineField[selectedR-1][selectedC].setSymbol("x");
                 selectedR--;
                 return true;
@@ -105,21 +105,21 @@ public class Minesweeper {
 
         } if(direction.equals("s")) {
             if(selectedR+1 <= mineField.length) {
-                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC].setSymbol("_");
                 mineField[selectedR+1][selectedC].setSymbol("x");
                 selectedR++;
                 return true;
             }
         } if(direction.equals("a")) {
             if(selectedC-1 >= 0) {
-                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC].setSymbol("_");
                 mineField[selectedR][selectedC-1].setSymbol("x");
                 selectedC--;
                 return true;
             }
         } if(direction.equals("d")) {
             if(selectedC+1 <= mineField[0].length) {
-                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC].setSymbol("_");
                 mineField[selectedR][selectedC+1].setSymbol("x");
                 selectedC++;
                 return true;
