@@ -19,9 +19,13 @@ public class Minesweeper {
         //need to add flag and click option
         while(!gameOver) {
             printMinefield();
-            System.out.print("Enter a direction to move cursor (wasd): ");
-            String direction = scan.nextLine();
-            if(!move(direction)) {
+            System.out.print("Enter a direction to move cursor (wasd) or (z) to sweep and (c) to add/remove flag: ");
+            String input = scan.nextLine();
+            if(input.equals("z")) {
+                sweep();
+            } else if(input.equals("c")) {
+                flag();
+            } else if(!move(input)) {
                 System.out.println("You cannot move there!");
             }
 
@@ -40,7 +44,7 @@ public class Minesweeper {
             totalMines = 10;
             for(int r = 0; r < mineField.length; r++) {
                 for(int c = 0; c  < mineField[0].length; c++) {
-                    mineField[r][c] = new Tile("口");
+                    mineField[r][c] = new Tile("◻\uFE0F");
                 }
             }
 
@@ -51,7 +55,7 @@ public class Minesweeper {
             totalMines = 40;
             for(int r = 0; r < mineField.length; r++) {
                 for(int c = 0; c  < mineField[0].length; c++) {
-                    mineField[r][c] = new Tile("口");
+                    mineField[r][c] = new Tile("◻\uFE0F");
                 }
             }
 
@@ -62,7 +66,7 @@ public class Minesweeper {
             totalMines = 99;
             for(int r = 0; r < mineField.length; r++) {
                 for(int c = 0; c  < mineField[0].length; c++) {
-                    mineField[r][c] = new Tile("口");
+                    mineField[r][c] = new Tile("◻\uFE0F");
                 }
             }
 
@@ -80,7 +84,7 @@ public class Minesweeper {
                 randomR = (int) (Math.random() * (mineField.length));
                 randomC = (int) (Math.random() * (mineField[0].length));
             }
-            mineField[randomR][randomC] = new Mine("口");
+            mineField[randomR][randomC] = new Mine("◻\uFE0F");
         }
     }
 
@@ -97,7 +101,7 @@ public class Minesweeper {
         //adapted from U9T5 gridGame
         if(direction.equals("w")) {
             if(selectedR-1 >= 0) {
-                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR-1][selectedC].setSymbol("x");
                 selectedR--;
                 return true;
@@ -105,26 +109,35 @@ public class Minesweeper {
 
         } if(direction.equals("s")) {
             if(selectedR+1 <= mineField.length) {
-                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR+1][selectedC].setSymbol("x");
                 selectedR++;
                 return true;
             }
         } if(direction.equals("a")) {
             if(selectedC-1 >= 0) {
-                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR][selectedC-1].setSymbol("x");
                 selectedC--;
                 return true;
             }
         } if(direction.equals("d")) {
             if(selectedC+1 <= mineField[0].length) {
-                mineField[selectedR][selectedC].setSymbol("口");
+                mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR][selectedC+1].setSymbol("x");
                 selectedC++;
                 return true;
             }
         }
+        return false;
+    }
+
+    //implement later
+    public boolean sweep() {
+        return false;
+    }
+
+    public boolean flag() {
         return false;
     }
 
