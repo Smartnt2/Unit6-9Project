@@ -102,7 +102,7 @@ public class Minesweeper {
         if(direction.equals("w")) {
             if(selectedR-1 >= 0) {
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
-                mineField[selectedR-1][selectedC].setSymbol("x");
+                mineField[selectedR-1][selectedC].setSymbol("[" + mineField[selectedR-1][selectedC].getSymbol() + "]");
                 selectedR--;
                 return true;
             }
@@ -110,21 +110,21 @@ public class Minesweeper {
         } if(direction.equals("s")) {
             if(selectedR+1 <= mineField.length) {
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
-                mineField[selectedR+1][selectedC].setSymbol("x");
+                mineField[selectedR+1][selectedC].setSymbol("[" + mineField[selectedR+1][selectedC].getSymbol() + "]");
                 selectedR++;
                 return true;
             }
         } if(direction.equals("a")) {
             if(selectedC-1 >= 0) {
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
-                mineField[selectedR][selectedC-1].setSymbol("x");
+                mineField[selectedR][selectedC-1].setSymbol("[" + mineField[selectedR][selectedC-1].getSymbol() + "]");
                 selectedC--;
                 return true;
             }
         } if(direction.equals("d")) {
             if(selectedC+1 <= mineField[0].length) {
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
-                mineField[selectedR][selectedC+1].setSymbol("x");
+                mineField[selectedR][selectedC+1].setSymbol("[" + mineField[selectedR][selectedC+1].getSymbol() + "]");
                 selectedC++;
                 return true;
             }
