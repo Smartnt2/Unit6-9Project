@@ -77,19 +77,19 @@ public class Minesweeper {
         //place cursor
         mineField[0][0].setSymbol("x");
         //generate mines;
-        int minesPlaced = 0;
-        while (minesPlaced < totalMines) {
+        for(int i = 0; i < totalMines; i++) {
             int randomR = (int) (Math.random() * (mineField.length));
             int randomC = (int) (Math.random() * (mineField[0].length));
-            if (!(mineField[randomR][randomC] instanceof Mine)) {
-                mineField[randomR][randomC] = new Mine("💣");
-                minesPlaced++;
+            while(mineField[randomR][randomC] instanceof Mine) {
+                randomR = (int) (Math.random() * (mineField.length));
+                randomC = (int) (Math.random() * (mineField[0].length));
             }
+            mineField[randomR][randomC] = new Mine("◻\uFE0F");
         }
     }
 
     public void printMinefield() {
-        // Old comment: Print the current state of the minefield
+        //Print the current state of the minefield
         for (int r = 0; r < mineField.length; r++) {
             for (int c = 0; c < mineField[0].length; c++) {
                 if (mineField[r][c] instanceof Mine) {
@@ -105,7 +105,7 @@ public class Minesweeper {
     public boolean move(String direction)  {
         //adapted from U9T5 gridGame
         if(direction.equals("w")) {
-            if(selectedR-1 >= 0) {
+            if(selectedR - 1 >= 0) {
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR-1][selectedC].setSymbol("x");
                 selectedR--;
@@ -113,21 +113,21 @@ public class Minesweeper {
             }
 
         } if(direction.equals("s")) {
-            if(selectedR+1 <= mineField.length) {
+            if(selectedR + 1 < mineField.length) {
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR+1][selectedC].setSymbol("x");
                 selectedR++;
                 return true;
             }
         } if(direction.equals("a")) {
-            if(selectedC-1 >= 0) {
+            if(selectedC - 1 >= 0) {
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR][selectedC-1].setSymbol("x");
                 selectedC--;
                 return true;
             }
         } if(direction.equals("d")) {
-            if(selectedC+1 <= mineField[0].length) {
+            if(selectedC + 1 < mineField[0].length) {
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR][selectedC+1].setSymbol("x");
                 selectedC++;
