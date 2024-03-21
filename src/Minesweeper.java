@@ -77,21 +77,26 @@ public class Minesweeper {
         //place cursor
         mineField[0][0].setSymbol("x");
         //generate mines;
-        for(int i = 0; i < totalMines; i++) {
+        int minesPlaced = 0;
+        while (minesPlaced < totalMines) {
             int randomR = (int) (Math.random() * (mineField.length));
             int randomC = (int) (Math.random() * (mineField[0].length));
-            while(mineField[randomR][randomC] instanceof Mine) {
-                randomR = (int) (Math.random() * (mineField.length));
-                randomC = (int) (Math.random() * (mineField[0].length));
+            if (!(mineField[randomR][randomC] instanceof Mine)) {
+                mineField[randomR][randomC] = new Mine("💣");
+                minesPlaced++;
             }
-            mineField[randomR][randomC] = new Mine("◻\uFE0F");
         }
     }
 
     public void printMinefield() {
-        for(Tile[] row : mineField) {
-            for(Tile tile: row) {
-                System.out.print(tile.getSymbol());
+        // Old comment: Print the current state of the minefield
+        for (int r = 0; r < mineField.length; r++) {
+            for (int c = 0; c < mineField[0].length; c++) {
+                if (mineField[r][c] instanceof Mine) {
+                    System.out.print(mineField[r][c].getSymbol());
+                } else {
+                    System.out.print(mineField[r][c].getSymbol());
+                }
             }
             System.out.println();
         }
