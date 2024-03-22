@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d1f31cb-e9ce-454c-b853-1e687f16d05f" name="Changes" comment="added mine generation to setupMinefield">
+    <list default="true" id="8d1f31cb-e9ce-454c-b853-1e687f16d05f" name="Changes" comment="changed cursor look">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Minesweeper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710941180822</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="changed cursor look">
+      <option name="closed" value="true" />
+      <created>1710963255512</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710963255512</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +177,7 @@
     <MESSAGE value="edited move and setupMinefield" />
     <MESSAGE value="added mine generation to setupMinefield" />
     <MESSAGE value="added sweep and flag methods (didn't fully implement yet), added Flag class, changed tile look." />
-    <option name="LAST_COMMIT_MESSAGE" value="added sweep and flag methods (didn't fully implement yet), added Flag class, changed tile look." />
+    <MESSAGE value="changed cursor look" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed cursor look" />
   </component>
 </project>
