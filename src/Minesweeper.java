@@ -75,7 +75,7 @@ public class Minesweeper {
             setupMinefield();
         }
         //place cursor
-        mineField[0][0].setSymbol("x");
+        mineField[0][0].setSymbol("[" + "◻\uFE0F" + "]");
         //generate mines;
         for(int i = 0; i < totalMines; i++) {
             int randomR = (int) (Math.random() * (mineField.length));

@@ -111,6 +111,17 @@
     <option name="localTasksCounter" value="8" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="inital commit" />
     <MESSAGE value="added Minesweeper, MinesweeperRunner, and start method" />
