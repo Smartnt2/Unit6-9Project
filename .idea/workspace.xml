@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d1f31cb-e9ce-454c-b853-1e687f16d05f" name="Changes" comment="Added mines that show up but dont work.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Flag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Flag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Minesweeper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

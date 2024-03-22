@@ -106,7 +106,9 @@ public class Minesweeper {
         //adapted from U9T5 gridGame
         if(direction.equals("w")) {
             if(selectedR - 1 >= 0) {
-                mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
+                if (mineField[selectedR][selectedC].getSymbol().equals("[\uD83D\uDEA9]")) {
+                    mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
+                }
                 mineField[selectedR-1][selectedC].setSymbol("[" + mineField[selectedR-1][selectedC].getSymbol() + "]");
                 selectedR--;
                 return true;
@@ -114,6 +116,9 @@ public class Minesweeper {
 
         } if(direction.equals("s")) {
             if(selectedR + 1 < mineField.length) {
+                if (mineField[selectedR][selectedC].getSymbol().equals("[\uD83D\uDEA9]")) {
+                    mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
+                }
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR+1][selectedC].setSymbol("[" + mineField[selectedR+1][selectedC].getSymbol() + "]");
                 selectedR++;
@@ -121,6 +126,9 @@ public class Minesweeper {
             }
         } if(direction.equals("a")) {
             if(selectedC - 1 >= 0) {
+                if (mineField[selectedR][selectedC].getSymbol().equals("[\uD83D\uDEA9]")) {
+                    mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
+                }
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR][selectedC-1].setSymbol("[" + mineField[selectedR][selectedC-1].getSymbol() + "]");
                 selectedC--;
@@ -128,6 +136,9 @@ public class Minesweeper {
             }
         } if(direction.equals("d")) {
             if(selectedC + 1 < mineField[0].length) {
+                if (mineField[selectedR][selectedC].getSymbol().equals("[\uD83D\uDEA9]")) {
+                    mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
+                }
                 mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
                 mineField[selectedR][selectedC+1].setSymbol("[" + mineField[selectedR][selectedC+1].getSymbol() + "]");
                 selectedC++;
@@ -142,8 +153,9 @@ public class Minesweeper {
         return false;
     }
 
-    public boolean flag() {
-        return false;
+    public void flag() {
+        mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
+
     }
 
 }
