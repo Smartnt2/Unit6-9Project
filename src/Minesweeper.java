@@ -23,9 +23,8 @@ public class Minesweeper {
             String input = scan.nextLine();
             if(input.equals("z")) {
                 sweep();
-            } else if(input.equals("c")) {
-                flag();
-            } else if(!move(input)) {
+            }
+            if(!move(input)) {
                 System.out.println("You cannot move there!");
             }
 
@@ -89,11 +88,11 @@ public class Minesweeper {
     }
 
     public void printMinefield() {
-        //Print the current state of the minefield
+        // Print the current state of the minefield
         for (int r = 0; r < mineField.length; r++) {
             for (int c = 0; c < mineField[0].length; c++) {
-                if (mineField[r][c] instanceof Mine) {
-                    System.out.print(mineField[r][c].getSymbol());
+                if (mineField[r][c] instanceof Flag) {
+                    System.out.print("\uD83D\uDEA9"); // Print flag symbol
                 } else {
                     System.out.print(mineField[r][c].getSymbol());
                 }
@@ -102,60 +101,57 @@ public class Minesweeper {
         }
     }
 
-    public boolean move(String direction)  {
-        //adapted from U9T5 gridGame
-        if(direction.equals("w")) {
-            if(selectedR - 1 >= 0) {
-                if (mineField[selectedR][selectedC].getSymbol().equals("[\uD83D\uDEA9]")) {
-                    mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
-                }
-                mineField[selectedR-1][selectedC].setSymbol("[" + mineField[selectedR-1][selectedC].getSymbol() + "]");
-                selectedR--;
+    public boolean move(String direction) {
+        // Adapted from U9T5 gridGame
+        if (direction.equals("w")) {
+            if (selectedR - 1 >= 0) {
+                moveCursor(selectedR - 1, selectedC);
                 return true;
             }
-
-        } if(direction.equals("s")) {
-            if(selectedR + 1 < mineField.length) {
-                if (mineField[selectedR][selectedC].getSymbol().equals("[\uD83D\uDEA9]")) {
-                    mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
-                }
-                mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
-                mineField[selectedR+1][selectedC].setSymbol("[" + mineField[selectedR+1][selectedC].getSymbol() + "]");
-                selectedR++;
+        } else if (direction.equals("s")) {
+            if (selectedR + 1 < mineField.length) {
+                moveCursor(selectedR + 1, selectedC);
                 return true;
             }
-        } if(direction.equals("a")) {
-            if(selectedC - 1 >= 0) {
-                if (mineField[selectedR][selectedC].getSymbol().equals("[\uD83D\uDEA9]")) {
-                    mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
-                }
-                mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
-                mineField[selectedR][selectedC-1].setSymbol("[" + mineField[selectedR][selectedC-1].getSymbol() + "]");
-                selectedC--;
+        } else if (direction.equals("a")) {
+            if (selectedC - 1 >= 0) {
+                moveCursor(selectedR, selectedC - 1);
                 return true;
             }
-        } if(direction.equals("d")) {
-            if(selectedC + 1 < mineField[0].length) {
-                if (mineField[selectedR][selectedC].getSymbol().equals("[\uD83D\uDEA9]")) {
-                    mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
-                }
-                mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
-                mineField[selectedR][selectedC+1].setSymbol("[" + mineField[selectedR][selectedC+1].getSymbol() + "]");
-                selectedC++;
+        } else if (direction.equals("d")) {
+            if (selectedC + 1 < mineField[0].length) {
+                moveCursor(selectedR, selectedC + 1);
                 return true;
             }
+        } else if (direction.equals("c")) {
+            flag(selectedR, selectedC);
+            return true;
         }
-        return false;
+        return false; // If movement is not possible
+    }
+
+    private void moveCursor(int newRow, int newCol) {
+        // updates position
+        mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
+        mineField[newRow][newCol].setSymbol("[" + mineField[newRow][newCol].getSymbol() + "]");
+        selectedR = newRow;
+        selectedC = newCol;
+    }
+
+    private void flag(int r, int c) {
+        Tile currentTile = mineField[r][c];
+        if (!(currentTile instanceof Flag)) {
+            // If the tile is not already a flag it adds a flag
+            mineField[r][c] = new Flag();
+        } else {
+            // If the tile is already a flag it removes the flag
+            mineField[r][c] = new Tile("◻\uFE0F");
+        }
     }
 
     //implement later
     public boolean sweep() {
         return false;
-    }
-
-    public void flag() {
-        mineField[selectedR][selectedC].setSymbol("[\uD83D\uDEA9]");
-
     }
 
 }
