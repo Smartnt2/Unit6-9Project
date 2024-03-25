@@ -43,7 +43,7 @@ public class Minesweeper {
             totalMines = 10;
             for(int r = 0; r < mineField.length; r++) {
                 for(int c = 0; c  < mineField[0].length; c++) {
-                    mineField[r][c] = new Tile("◻\uFE0F");
+                    mineField[r][c] = new Tile("◻️");
                 }
             }
 
@@ -54,7 +54,7 @@ public class Minesweeper {
             totalMines = 40;
             for(int r = 0; r < mineField.length; r++) {
                 for(int c = 0; c  < mineField[0].length; c++) {
-                    mineField[r][c] = new Tile("◻\uFE0F");
+                    mineField[r][c] = new Tile("◻️");
                 }
             }
 
@@ -65,7 +65,7 @@ public class Minesweeper {
             totalMines = 99;
             for(int r = 0; r < mineField.length; r++) {
                 for(int c = 0; c  < mineField[0].length; c++) {
-                    mineField[r][c] = new Tile("◻\uFE0F");
+                    mineField[r][c] = new Tile("◻️");
                 }
             }
 
@@ -74,7 +74,7 @@ public class Minesweeper {
             setupMinefield();
         }
         //place cursor
-        mineField[0][0].setSymbol("[" + "◻\uFE0F" + "]");
+        mineField[0][0].setSymbol("[" + "◻️" + "]");
         //generate mines;
         for(int i = 0; i < totalMines; i++) {
             int randomR = (int) (Math.random() * (mineField.length));
@@ -83,7 +83,7 @@ public class Minesweeper {
                 randomR = (int) (Math.random() * (mineField.length));
                 randomC = (int) (Math.random() * (mineField[0].length));
             }
-            mineField[randomR][randomC] = new Mine("◻\uFE0F");
+            mineField[randomR][randomC] = new Mine("◻️");
         }
     }
 
@@ -132,7 +132,7 @@ public class Minesweeper {
 
     private void moveCursor(int newRow, int newCol) {
         // updates position
-        mineField[selectedR][selectedC].setSymbol("◻\uFE0F");
+        mineField[selectedR][selectedC].setSymbol("◻️");
         mineField[newRow][newCol].setSymbol("[" + mineField[newRow][newCol].getSymbol() + "]");
         selectedR = newRow;
         selectedC = newCol;
@@ -145,7 +145,7 @@ public class Minesweeper {
             mineField[r][c] = new Flag();
         } else {
             // If the tile is already a flag it removes the flag
-            mineField[r][c] = new Tile("◻\uFE0F");
+            mineField[r][c] = new Tile("◻️");
         }
     }
 
